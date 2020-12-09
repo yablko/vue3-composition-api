@@ -10,7 +10,7 @@
         :key="list.id"
       />
 
-      <ListCreateForm />
+      <ListCreateForm @new-list-coming="addNewList($event)" />
     </div>
   </main>
 </template>
@@ -30,8 +30,21 @@ export default {
   setup() {
     const lists = ref(data)
 
+    const addNewList = title => {
+      if (!title) return
+
+      lists.value.push({
+        id: Math.max(...lists.value.map(list => list.id)) + 1,
+        title: title,
+        cards: []
+      })
+
+      console.log(lists.value)
+    }
+
     return {
-      lists
+      lists,
+      addNewList
     }
   }
 }

@@ -17,11 +17,11 @@
 import { ref } from 'vue'
 
 export default {
-  setup() {
+  setup(props, { emit }) {
     const title = ref('')
 
     const submitForm = () => {
-      alert(title.value)
+      emit('new-list-coming', title.value)
     }
 
     return {
