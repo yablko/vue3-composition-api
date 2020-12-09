@@ -15,7 +15,12 @@
     </div>
 
     <transition name="pop">
-      <CardPopup v-if="isPopped" @close-popup="undoPop" />
+      <CardPopup
+        v-if="isPopped"
+        :card="card"
+        :listId="listId"
+        @close-popup="undoPop"
+      />
     </transition>
   </li>
 </template>
@@ -38,6 +43,9 @@ export default {
   props: {
     card: {
       type: Object
+    },
+    listId: {
+      type: Number
     }
   },
   setup() {

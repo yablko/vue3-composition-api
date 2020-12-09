@@ -24,6 +24,7 @@
     </li>
     <li class="flex">
       <a
+        @click="deleteCard"
         class="flex items-center px-3 py-2.5 mb-1.5 bg-black bg-opacity-60 hover:bg-opacity-100 rounded transform hover:translate-x-1 transition duration-75 ease-in"
         href="#"
       >
@@ -62,9 +63,29 @@
 
 <script>
 export default {
+  props: {
+    card: {
+      type: Object
+    },
+    listId: {
+      type: Number
+    }
+  },
   setup(props, { emit }) {
+    const deleteCard = () => {
+      // delete card
+      window.eventBus.emit('delete-card', {
+        cardId: props.card.id,
+        listId: props.listId
+      })
+
+      // hide overlay
+      window.eventBus.emit('toggle-overlay', false)
+    }
+
     return {
-      emit
+      emit,
+      deleteCard
     }
   }
 }
