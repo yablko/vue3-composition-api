@@ -27,8 +27,4 @@ export const editListTitle = (data, lists) => {
 
   let listToEdit = lists.find(list => list.id === data.id)
   listToEdit.title = data.newTitle
-
-  console.log(lists)
-
-  console.log(data, lists)
 }
