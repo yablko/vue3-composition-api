@@ -9,7 +9,7 @@
       Add a card...
     </a>
 
-    <form v-if="formVisible" action="/">
+    <form v-if="formVisible" @submit.prevent="submitForm" action="/">
       <textarea
         class="w-full p-3 border-t border-l border-gray-300 outline-none rounded shadow-inner"
         rows="3"
@@ -52,10 +52,15 @@ export default {
       state.formVisible = false
     }
 
+    const submitForm = () => {
+      window.eventBus.emit('new-card-coming', 'vasho')
+    }
+
     return {
       ...toRefs(state),
       showForm,
-      hideForm
+      hideForm,
+      submitForm
     }
   }
 }

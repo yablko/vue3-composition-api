@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { data } from '@/data.js'
 
 import List from '@/components/List.vue'
@@ -38,9 +38,12 @@ export default {
         title: title,
         cards: []
       })
-
-      console.log(lists.value)
     }
+
+    // events
+    onMounted(() => {
+      window.eventBus.on('new-card-coming', event => console.log(event))
+    })
 
     return {
       lists,
