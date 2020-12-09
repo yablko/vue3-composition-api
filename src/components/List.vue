@@ -2,7 +2,8 @@
   <section class="list">
     <header>
       <h3
-        @click="isEditing = true"
+        ref="titleElement"
+        @click="startEditing"
         @blur="saveTitle"
         @keydown.enter="saveTitle"
         :contenteditable="isEditing"
@@ -22,7 +23,7 @@
 </template>
 
 <script>
-import { toRefs, reactive } from 'vue'
+import { ref, toRefs, reactive } from 'vue'
 
 import Card from '@/components/Card.vue'
 import CardCreateForm from '@/components/CardCreateForm.vue'
@@ -44,18 +45,28 @@ export default {
     }
   },
   setup(/* props, { emit } */) {
+    const titleElement = ref(null)
+
     const state = reactive({
       isEditing: false
     })
 
     const saveTitle = () => {
       state.isEditing = false
+      console.log(titleElement.value.textContent)
       // emit('edit-list-title', )
+    }
+
+    const startEditing = () => {
+      state.isEditing = true
+      setTimeout(() => titleElement.value.focus(), 0)
     }
 
     return {
       ...toRefs(state),
-      saveTitle
+      saveTitle,
+      titleElement,
+      startEditing
     }
   }
 }
