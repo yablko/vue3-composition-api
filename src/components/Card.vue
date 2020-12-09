@@ -1,5 +1,9 @@
 <template>
-  <li @dblclick="doPop" :class="{ 'z-20': isPopped }" class="card relative">
+  <li
+    class="card relative"
+    :class="{ 'z-20': isPopped }"
+    @contextmenu.prevent="doPop"
+  >
     <CardImage :image="card.image" />
 
     <div class="p-3">
@@ -11,7 +15,7 @@
     </div>
 
     <transition name="pop">
-      <CardPopup v-if="isPopped" />
+      <CardPopup v-if="isPopped" @close-popup="undoPop" />
     </transition>
   </li>
 </template>
@@ -46,9 +50,15 @@ export default {
       window.eventBus.emit('toggle-overlay', true)
     }
 
+    const undoPop = () => {
+      state.isPopped = false
+      window.eventBus.emit('toggle-overlay', false)
+    }
+
     return {
       ...toRefs(state),
-      doPop
+      doPop,
+      undoPop
     }
   }
 }
