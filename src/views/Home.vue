@@ -1,31 +1,22 @@
 <template>
-  <div>
-    <button @click="score++">{{ score }} twice is {{ double }}</button>
-
-    <p>
-      {{ dude }}
-    </p>
-  </div>
+  <main class="flex min-h-screen bg-purple-500 lg:bg-gradient-to-r from-red-400 to-pink-400">
+    <div class="sm:flex items-start w-screen px-4 py-10 overflow-x-auto">
+      <List title="BOARD GAMES" />
+      <List title="TOKYO" />
+      <List title="BRAIN THOUGHTS" />
+    </div>
+  </main>
 </template>
 
 <script>
-import { reactive, toRefs, computed, onMounted } from 'vue'
+import List from '@/components/List.vue'
 
 export default {
+  components: {
+    List
+  },
   setup() {
-    const state = reactive({
-      score: 0,
-      double: computed(() => state.score * 2),
-      dude: 'Bulma'
-    })
-
-    onMounted(() => {
-      console.log('I AM READY')
-    })
-
-    return {
-      ...toRefs(state)
-    }
+    return {}
   }
 }
 </script>
