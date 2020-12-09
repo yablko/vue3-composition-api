@@ -5,6 +5,7 @@
     <div class="sm:flex items-start w-screen px-4 py-10 overflow-x-auto">
       <List
         v-for="list in lists"
+        :id="list.id"
         :title="list.title"
         :cards="list.cards"
         :key="list.id"
@@ -42,8 +43,22 @@ export default {
 
     // events
     onMounted(() => {
-      window.eventBus.on('new-card-coming', event => console.log(event))
+      window.eventBus.on('new-card-coming', event => {
+        addNewCard(event)
+      })
     })
+
+    // add new card
+    const addNewCard = data => {
+      if (!data.text) return
+
+      let listForNewCard = lists.value.find(list => list.id === data.listId)
+
+      listForNewCard.cards.push({
+        id: Math.max(...listForNewCard.cards.map(card => card.id)) + 1,
+        text: data.text
+      })
+    }
 
     return {
       lists,

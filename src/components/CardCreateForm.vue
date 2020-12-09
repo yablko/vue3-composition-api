@@ -11,6 +11,7 @@
 
     <form v-if="formVisible" @submit.prevent="submitForm" action="/">
       <textarea
+        v-model="text"
         class="w-full p-3 border-t border-l border-gray-300 outline-none rounded shadow-inner"
         rows="3"
       ></textarea>
@@ -36,8 +37,14 @@
 import { reactive, toRefs } from 'vue'
 
 export default {
-  setup() {
+  props: {
+    listId: {
+      type: Number
+    }
+  },
+  setup(props) {
     const state = reactive({
+      text: '',
       linkVisible: true,
       formVisible: false
     })
@@ -53,7 +60,10 @@ export default {
     }
 
     const submitForm = () => {
-      window.eventBus.emit('new-card-coming', 'vasho')
+      window.eventBus.emit('new-card-coming', {
+        listId: props.listId,
+        text: state.text
+      })
     }
 
     return {
