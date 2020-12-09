@@ -4,9 +4,9 @@
       <h3 class="p-1 font-bold leading-none text-gray-900">{{ title }}</h3>
     </header>
 
-    <ul>
-      <Card v-for="card in cards" :card="card" :key="card.id"></Card>
-    </ul>
+    <transition-group name="card" tag="ul">
+      <Card v-for="card in cards" :card="card" :key="card.id" />
+    </transition-group>
 
     <CardCreateForm :listId="id" />
   </section>
@@ -35,3 +35,16 @@ export default {
   setup() {}
 }
 </script>
+
+<style scoped>
+.card-enter-active,
+.card-leave-active {
+  transition: all 0.15s;
+}
+
+.card-enter-from,
+.card-leave-to {
+  opacity: 0;
+  transform: scale(0.75);
+}
+</style>

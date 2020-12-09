@@ -11,7 +11,7 @@
 export default {
   props: {
     image: {
-      type: Array
+      type: Object
     }
   },
   setup() {
