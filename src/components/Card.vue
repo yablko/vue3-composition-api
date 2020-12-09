@@ -83,17 +83,13 @@ export default {
     const saveText = () => {
       state.isEditing = false
 
-      // window.eventBus.emit('edit-card-text', {
-      //   cardId: props.card.id,
-      //   listId: props.listId,
-      //   newText: cardText.value.textContent
-      // })
-
-      console.log({
+      window.eventBus.emit('edit-card-text', {
         cardId: props.card.id,
         listId: props.listId,
         newText: cardText.value.textContent
       })
+
+      undoPop()
     }
 
     return {

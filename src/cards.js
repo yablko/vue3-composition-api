@@ -20,6 +20,22 @@ export const addNewCard = (data, lists) => {
 }
 
 /**
+ * EDIT CARD TEXT
+ *
+ * @param {object} data
+ * @param {array} lists
+ */
+export const editCardText = (data, lists) => {
+  if (!data?.cardId || !data?.listId || !data?.newText) return
+
+  let listForEditedCard = lists.find(list => list.id === data.listId)
+
+  let editedCard = listForEditedCard.cards.find(card => card.id === data.cardId)
+
+  editedCard.text = data.newText
+}
+
+/**
  * DELETE CARD
  * with cardId, from list with listId
  *
@@ -34,6 +50,4 @@ export const deleteCard = (data, lists) => {
   listToRemoveCardFrom.cards = listToRemoveCardFrom.cards.filter(
     card => card.id !== data.cardId
   )
-
-  console.log(listToRemoveCardFrom)
 }

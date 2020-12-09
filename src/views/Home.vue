@@ -34,7 +34,7 @@ import { ref, onMounted } from 'vue'
 import { data } from '@/data.js'
 
 // functions
-import { addNewCard, deleteCard } from '@/cards.js'
+import { addNewCard, editCardText, deleteCard } from '@/cards.js'
 import { addNewList, editListTitle } from '@/lists.js'
 
 // @ is an alias to /src
@@ -54,6 +54,10 @@ export default {
     onMounted(() => {
       window.eventBus.on('new-card-coming', event => {
         addNewCard(event, lists.value)
+      })
+
+      window.eventBus.on('edit-card-text', event => {
+        editCardText(event, lists.value)
       })
 
       window.eventBus.on('delete-card', event => {
