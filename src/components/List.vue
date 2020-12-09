@@ -1,7 +1,16 @@
 <template>
   <section class="list">
     <header>
-      <h3 class="p-1 font-bold leading-none text-gray-900">{{ title }}</h3>
+      <h3
+        @click="isEditing = true"
+        @blur="saveTitle"
+        @keydown.enter="saveTitle"
+        :contenteditable="isEditing"
+        :class="{ 'shadow-outline': isEditing }"
+        class="p-1 font-bold leading-none text-gray-900 outline-none"
+      >
+        {{ title }}
+      </h3>
     </header>
 
     <transition-group name="card" tag="ul">
@@ -13,6 +22,8 @@
 </template>
 
 <script>
+import { toRefs, reactive } from 'vue'
+
 import Card from '@/components/Card.vue'
 import CardCreateForm from '@/components/CardCreateForm.vue'
 
@@ -32,7 +43,21 @@ export default {
       type: Array
     }
   },
-  setup() {}
+  setup(/* props, { emit } */) {
+    const state = reactive({
+      isEditing: false
+    })
+
+    const saveTitle = () => {
+      state.isEditing = false
+      // emit('edit-list-title', )
+    }
+
+    return {
+      ...toRefs(state),
+      saveTitle
+    }
+  }
 }
 </script>
 
