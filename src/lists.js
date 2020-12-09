@@ -15,3 +15,20 @@ export const addNewList = (title, lists) => {
     cards: []
   })
 }
+
+/**
+ * EDIT LIST TITLE
+ *
+ * @param {object} data
+ * @param {array} lists
+ */
+export const editListTitle = (data, lists) => {
+  if (!data?.id || !data?.newTitle) return
+
+  let listToEdit = lists.find(list => list.id === data.id)
+  listToEdit.title = data.newTitle
+
+  console.log(lists)
+
+  console.log(data, lists)
+}

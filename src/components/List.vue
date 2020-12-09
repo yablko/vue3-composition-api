@@ -44,7 +44,7 @@ export default {
       type: Array
     }
   },
-  setup(/* props, { emit } */) {
+  setup(props, { emit }) {
     const titleElement = ref(null)
 
     const state = reactive({
@@ -53,8 +53,11 @@ export default {
 
     const saveTitle = () => {
       state.isEditing = false
-      console.log(titleElement.value.textContent)
-      // emit('edit-list-title', )
+
+      emit('edit-list-title', {
+        id: props.id,
+        newTitle: titleElement.value.textContent
+      })
     }
 
     const startEditing = () => {

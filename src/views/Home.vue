@@ -13,6 +13,7 @@
         :title="list.title"
         :cards="list.cards"
         :key="list.id"
+        @edit-list-title="editListTitle($event, lists)"
       />
 
       <ListCreateForm @new-list-coming="addNewList($event, lists)" key="0" />
@@ -27,7 +28,7 @@ import { data } from '@/data.js'
 
 // functions
 import { addNewCard } from '@/cards.js'
-import { addNewList } from '@/lists.js'
+import { addNewList, editListTitle } from '@/lists.js'
 
 // @ is an alias to /src
 import List from '@/components/List.vue'
@@ -50,7 +51,8 @@ export default {
 
     return {
       lists,
-      addNewList
+      addNewList,
+      editListTitle
     }
   }
 }
