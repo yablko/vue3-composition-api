@@ -7,6 +7,13 @@
       tag="div"
       class="sm:flex items-start w-screen px-4 py-10 overflow-x-auto"
     >
+      <div
+        v-if="overlay"
+        id="overlay"
+        class="bg-black bg-opacity-70 fixed top-0 left-0 w-full h-screen z-10"
+        key="-1"
+      ></div>
+
       <List
         v-for="list in lists"
         :id="list.id"
@@ -41,16 +48,22 @@ export default {
   },
   setup() {
     const lists = ref(data)
+    const overlay = ref(false)
 
     // events
     onMounted(() => {
       window.eventBus.on('new-card-coming', event => {
         addNewCard(event, lists.value)
       })
+
+      window.eventBus.on('toggle-overlay', event => {
+        overlay.value = event
+      })
     })
 
     return {
       lists,
+      overlay,
       addNewList,
       editListTitle
     }
@@ -68,5 +81,9 @@ export default {
 .list-leave-to {
   opacity: 0;
   transform: scale(0.75);
+}
+
+#overlay {
+  transform: scale(1);
 }
 </style>

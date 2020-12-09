@@ -1,9 +1,5 @@
 <template>
-  <li
-    @click="isPopped = true"
-    :class="{ 'z-20': isPopped }"
-    class="card relative"
-  >
+  <li @dblclick="doPop" :class="{ 'z-20': isPopped }" class="card relative">
     <CardImage :image="card.image" />
 
     <div class="p-3">
@@ -14,7 +10,9 @@
       <CardTags :tags="card.tags" />
     </div>
 
-    <CardPopup v-if="isPopped" />
+    <transition name="pop">
+      <CardPopup v-if="isPopped" />
+    </transition>
   </li>
 </template>
 
@@ -43,9 +41,28 @@ export default {
       isPopped: false
     })
 
+    const doPop = () => {
+      state.isPopped = true
+      window.eventBus.emit('toggle-overlay', true)
+    }
+
     return {
-      ...toRefs(state)
+      ...toRefs(state),
+      doPop
     }
   }
 }
 </script>
+
+<style scoped>
+.pop-enter-active,
+.pop-leave-active {
+  transition: all 0.1s ease-in;
+}
+
+.pop-enter-from,
+.pop-leave-to {
+  opacity: 0;
+  transform: translateX(-25%);
+}
+</style>
