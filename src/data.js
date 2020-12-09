@@ -16,8 +16,8 @@ export const data = [
         text: 'Star Realms'
       }
     ]
-  },
-  {
+  }
+  /* {
     id: 2,
     title: 'TOKYO',
     cards: [
@@ -57,5 +57,5 @@ export const data = [
         text: 'ak ježiš chcel, aby sme boli triezvi, robil by z vína vodu.'
       }
     ]
-  }
+  } */
 ]
