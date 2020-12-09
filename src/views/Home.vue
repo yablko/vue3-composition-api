@@ -3,25 +3,29 @@
     <button @click="score++">{{ score }} twice is {{ double }}</button>
 
     <p>
-      {{ hello }}
+      {{ dude }}
     </p>
   </div>
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { reactive, toRefs, computed, onMounted } from 'vue'
 
 export default {
   setup() {
-    // data
-    const score = ref(69)
-    const dude = ref('Bulma')
+    const state = reactive({
+      score: 0,
+      double: computed(() => state.score * 2),
+      dude: 'Bulma'
+    })
 
-    // computed
-    const double = computed(() => score.value * 2)
-    const hello = computed(() => 'Hello, I am ' + dude.value)
+    onMounted(() => {
+      console.log('I AM READY')
+    })
 
-    return { score, double, hello }
+    return {
+      ...toRefs(state)
+    }
   }
 }
 </script>
