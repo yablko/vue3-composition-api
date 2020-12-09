@@ -5,7 +5,7 @@
     </header>
 
     <ul>
-      <Card v-for="card in cards" :text="card.text" :key="card.id"></Card>
+      <Card v-for="card in cards" :card="card" :key="card.id"></Card>
     </ul>
 
     <CardCreateForm :listId="id" />

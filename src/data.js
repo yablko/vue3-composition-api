@@ -13,7 +13,16 @@ export const data = [
       },
       {
         id: 3,
-        text: 'Star Realms'
+        text: 'Star Realms',
+        labels: ['yellow', 'blue', 'red', 'green', 'purple']
+      },
+      {
+        id: 4,
+        text: 'Agricola: All Creatures Big and Small'
+      },
+      {
+        id: 5,
+        text: 'Splendor'
       }
     ]
   },
@@ -23,15 +32,18 @@ export const data = [
     cards: [
       {
         id: 1,
-        text: 'GODZILLA potriasť jej packou zagratuľovať k povýšeniu'
+        text: 'GODZILLA potriasť jej packou zagratuľovať k povýšeniu',
+        labels: ['red']
       },
       {
         id: 2,
-        text: 'VAMPIRE CAFÉ suck my blood pls'
+        text: 'VAMPIRE CAFÉ suck my blood pls',
+        labels: ['purple']
       },
       {
         id: 3,
-        text: 'HACHIKO pohladkať tohoto veľmi dobrého chlapca'
+        text: 'HACHIKO pohladkať tohoto veľmi dobrého chlapca',
+        labels: ['green']
       }
     ]
   },
@@ -51,7 +63,8 @@ export const data = [
       {
         id: 3,
         text:
-          'čo keby fitness ľudia prestali cvičiť a všetka krv sa im z bicepsov naleje do hlavy a každý z nich je hawking.'
+          'čo keby fitness ľudia prestali cvičiť a všetka krv sa im z bicepsov naleje do hlavy a každý z nich je hawking.',
+        labels: ['purple', 'red']
       },
       {
         id: 4,
