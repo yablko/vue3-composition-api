@@ -9,7 +9,15 @@
     <div class="p-3">
       <CardLabels :labels="card.labels" />
 
-      <p>{{ card.text }}</p>
+      <p
+        ref="cardText"
+        @keydown.enter="saveText"
+        :contenteditable="isEditing"
+        :class="{ 'shadow-outline': isEditing }"
+        class="outline-none"
+      >
+        {{ card.text }}
+      </p>
 
       <CardTags :tags="card.tags" />
     </div>
@@ -20,13 +28,14 @@
         :card="card"
         :listId="listId"
         @close-popup="undoPop"
+        @start-edit="startEditing"
       />
     </transition>
   </li>
 </template>
 
 <script>
-import { toRefs, reactive } from 'vue'
+import { ref, toRefs, reactive } from 'vue'
 
 import CardTags from '@/components/CardTags.vue'
 import CardPopup from '@/components/CardPopup.vue'
@@ -48,9 +57,12 @@ export default {
       type: Number
     }
   },
-  setup() {
+  setup(props) {
+    const cardText = ref(null)
+
     const state = reactive({
-      isPopped: false
+      isPopped: false,
+      isEditing: false
     })
 
     const doPop = () => {
@@ -63,10 +75,34 @@ export default {
       window.eventBus.emit('toggle-overlay', false)
     }
 
+    const startEditing = () => {
+      state.isEditing = true
+      setTimeout(() => cardText.value.focus(), 0)
+    }
+
+    const saveText = () => {
+      state.isEditing = false
+
+      // window.eventBus.emit('edit-card-text', {
+      //   cardId: props.card.id,
+      //   listId: props.listId,
+      //   newText: cardText.value.textContent
+      // })
+
+      console.log({
+        cardId: props.card.id,
+        listId: props.listId,
+        newText: cardText.value.textContent
+      })
+    }
+
     return {
       ...toRefs(state),
       doPop,
-      undoPop
+      undoPop,
+      cardText,
+      saveText,
+      startEditing
     }
   }
 }

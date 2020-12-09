@@ -5,6 +5,7 @@
   >
     <li class="flex">
       <a
+        @click="emit('start-edit')"
         class="flex items-center px-3 py-2.5 mb-1.5 bg-black bg-opacity-60 hover:bg-opacity-100 rounded transform hover:translate-x-1 transition duration-75 ease-in"
         href="#"
       >
