@@ -33,7 +33,11 @@ export const data = [
       {
         id: 1,
         text: 'GODZILLA potriasť jej packou zagratuľovať k povýšeniu',
-        labels: ['red']
+        labels: ['red'],
+        image: {
+          filename: 'godzilla.jpg',
+          alt: 'godzilla statue in tokyo'
+        }
       },
       {
         id: 2,
@@ -43,7 +47,12 @@ export const data = [
       {
         id: 3,
         text: 'HACHIKO pohladkať tohoto veľmi dobrého chlapca',
-        labels: ['green']
+        labels: ['green'],
+        tags: ['very', 'good', 'boy'],
+        image: {
+          filename: 'hachiboy.png',
+          alt: 'drawing of a dog, akita breed'
+        }
       }
     ]
   },
@@ -68,7 +77,8 @@ export const data = [
       },
       {
         id: 4,
-        text: 'ak ježiš chcel, aby sme boli triezvi, robil by z vína vodu.'
+        text: 'ak ježiš chcel, aby sme boli triezvi, robil by z vína vodu.',
+        tags: ['✝️', '🍷']
       }
     ]
   }
