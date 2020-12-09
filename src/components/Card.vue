@@ -7,20 +7,12 @@
 </template>
 
 <script>
-import { reactive, toRefs } from 'vue'
-
 export default {
   props: {
     text: {
       type: String
     }
   },
-  setup() {
-    const state = reactive({})
-
-    return {
-      ...toRefs(state)
-    }
-  }
+  setup() {}
 }
 </script>

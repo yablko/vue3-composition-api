@@ -43,22 +43,26 @@ export default {
     }
   },
   setup(props) {
+    // state
     const state = reactive({
       text: '',
       linkVisible: true,
       formVisible: false
     })
 
+    // show form
     const showForm = () => {
       state.linkVisible = false
       state.formVisible = true
     }
 
+    // hide form
     const hideForm = () => {
       state.linkVisible = true
       state.formVisible = false
     }
 
+    // submit form
     const submitForm = () => {
       window.eventBus.emit('new-card-coming', {
         listId: props.listId,
