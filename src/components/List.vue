@@ -5,9 +5,7 @@
     </header>
 
     <ul>
-      <Card text="Lost Cities"></Card>
-      <Card text="Summoner Wars: Master Set"></Card>
-      <Card text="Star Realms"></Card>
+      <Card v-for="card in cards" :text="card.text" :key="card.id"></Card>
     </ul>
   </section>
 </template>
@@ -24,6 +22,9 @@ export default {
   props: {
     title: {
       type: String
+    },
+    cards: {
+      type: Array
     }
   },
   setup(props) {
