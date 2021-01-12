@@ -41,6 +41,9 @@ How to use the emit using COMPOSITION API
 $refs and the Vue 3 Composition API  
 :: https://markus.oberlehner.net/blog/refs-and-the-vue-3-composition-api  
 
+Spomínané (krásne) Flight Simulator video  
+:: https://www.youtube.com/watch?v=0w7q1ZFfsxs
+
 ---
 
 ### Úlohy (a.k.a. hraj sa s kódom, inak sa to nenaučíš)
