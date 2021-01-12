@@ -1,4 +1,4 @@
-# Vue 3 KURZ ✨ Composition API
+# Vue 3 kurz ✨ Composition API
 
 **Naučím ťa Composition API** - nový spôsob, ktorým vo Vue môžeš písať komponenty. Podobá sa na React Hooks, má silný TypeScript support a dovoľuje ti upratať si kód kam chceš. Pomôže hlavne pri veľkých komponentoch. V úvode dám Composition API rýchlokurz, potom ním rozhýbem appku, dizajn ktorej som vytvoril v [Tailwind CSS kurze](https://github.com/yablko/tailwind-trulo).
 
