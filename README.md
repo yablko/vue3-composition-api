@@ -21,6 +21,12 @@ Vue 3 + Composition API
 :: https://composition-api.vuejs.org/api.html  
 :: https://v3.vuejs.org/guide/composition-api-introduction.html 
 
+**Vue 3 rýchlokurz ✨ programovanie cez komponenty**  
+:: https://github.com/yablko/vue3-vite  
+
+**Kurz Vue.js + single page aplikácie**  
+:: https://www.learn2code.sk/kurzy/vue-js-single-page-aplikacie/  
+
 VS Code stuff  
 :: https://marketplace.visualstudio.com/items?itemName=octref.vetur  
 :: https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets  
@@ -34,12 +40,6 @@ How to use the emit using COMPOSITION API
 
 $refs and the Vue 3 Composition API  
 :: https://markus.oberlehner.net/blog/refs-and-the-vue-3-composition-api  
-
-**Vue 3 rýchlokurz ✨ programovanie cez komponenty**  
-:: https://github.com/yablko/vue3-vite  
-
-**Kurz Vue.js + single page aplikácie**  
-:: https://www.learn2code.sk/kurzy/vue-js-single-page-aplikacie/  
 
 ---
 
