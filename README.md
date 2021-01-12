@@ -18,28 +18,28 @@ Patróni majú všetky videá skôr, kurzy dostanú aj ako text a majú ďalšie
 
 Vue 3 + Composition API  
 :: https://v3.vuejs.org  
-:: https://composition-api.vuejs.org/api.html
+:: https://composition-api.vuejs.org/api.html  
 :: https://v3.vuejs.org/guide/composition-api-introduction.html 
 
 VS Code stuff  
-:: https://marketplace.visualstudio.com/items?itemName=octref.vetur 
-:: https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets 
-:: https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets. 
+:: https://marketplace.visualstudio.com/items?itemName=octref.vetur  
+:: https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets  
+:: https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets  
 
-4 Vue3 Composition API Tips You Should Know
-:: https://learnvue.co/2020/01/4-vue3-composition-api-tips-you-should-know/
+4 Vue3 Composition API Tips You Should Know  
+:: https://learnvue.co/2020/01/4-vue3-composition-api-tips-you-should-know  
 
-How to use the emit using COMPOSITION API
-:: https://github.com/u3u/vue-hooks/issues/70
+How to use the emit using COMPOSITION API  
+:: https://github.com/u3u/vue-hooks/issues/70  
 
-$refs and the Vue 3 Composition API
-:: https://markus.oberlehner.net/blog/refs-and-the-vue-3-composition-api/
+$refs and the Vue 3 Composition API  
+:: https://markus.oberlehner.net/blog/refs-and-the-vue-3-composition-api  
 
-Vue 3 rýchlokurz ✨ programovanie cez komponenty
-:: https://github.com/yablko/vue3-vite
+**Vue 3 rýchlokurz ✨ programovanie cez komponenty**  
+:: https://github.com/yablko/vue3-vite  
 
-Kurz Vue.js + single page aplikácie
-:: https://www.learn2code.sk/kurzy/vue-js-single-page-aplikacie/
+**Kurz Vue.js + single page aplikácie**  
+:: https://www.learn2code.sk/kurzy/vue-js-single-page-aplikacie/  
 
 ---
 
