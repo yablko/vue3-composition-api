@@ -74,6 +74,10 @@ Spomínané (krásne) Flight Simulator video
       - zobrazia sa len archived === false
       - TRASH namiesto vymazania zmení archived na true
 
+    toto sú prevažne drobné usability vylepšenia
+    najlepšie samozrejme bude, keď vezmeš kód a prerobíš ho na vlastný projekt
+    vymakanejší projekt
+
 ---
 
 ### Rozbehaj kód
