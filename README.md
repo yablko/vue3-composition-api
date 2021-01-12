@@ -48,6 +48,32 @@ Spomínané (krásne) Flight Simulator video
 
 ### Úlohy (a.k.a. hraj sa s kódom, inak sa to nenaučíš)
 
+	- po zobrazení formuláru NECH SA FOCUSNE input/textarea
+      nech hneď môžeš písať 
+
+	- aby sa INPUT pre pridanie nového záznamu PREČISTIL
+      nech nemusíš ručne mazať text pred zadávaním
+
+	- zmeniť EDIT CARD na IKONKU
+      ja zatiaľ edit proces štartujem cez right-click / double-click
+
+	- dorob VYMAZANIE listu 
+      zatiaľ sa dá len UPRAVIŤ jeho názov 
+
+	- odoslanie formuláru cez CTRL + ENTER
+	  alebo CMD + ENTER na macu, alebo SHIFT + ENTER, je to na tebe
+
+	- pri EDITE názvu listu:
+      - FOCUSNÚŤ sa dnu, automaticky vyznačiť text 
+      - po BLUR alebo ESC nech sa vráti pôvodný text
+
+	- ESC nech zruší popup a zavrie overlay
+
+	- ARCHIVE namiesto DELETE
+      - každý card bude evidovať archived: true/false
+      - zobrazia sa len archived === false
+      - TRASH namiesto vymazania zmení archived na true
+
 ---
 
 ### Rozbehaj kód
