@@ -21,6 +21,9 @@ Vue 3 + Composition API
 :: https://composition-api.vuejs.org/api.html  
 :: https://v3.vuejs.org/guide/composition-api-introduction.html 
 
+Composition API cheat sheet  
+:: https://www.vuemastery.com/pdf/Vue-3-Cheat-Sheet.pdf  
+
 **Vue 3 rýchlokurz ✨ programovanie cez komponenty**  
 :: https://github.com/yablko/vue3-vite  
 
